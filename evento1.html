@@ -12,27 +12,72 @@
 />
     <title>Document</title>
     <style>
-        img{
-            float: left;
-            margin: 5px;
-            width: 45%;
-            height: 90%;
+        
+        #imagenes{
+            background-color: red;
+            
         }
-        .imagenes{
-            height: 30%;
+        .galleria{
+            width: 20%;
+            height: 300px;
+            float: left;
+            margin: 10px;
+            background-color: pink;
+        }
+        img{
+            width: 90%;
+            height: 90%;
+            display: block;
 
         }
+        #hola{
+            background-color: brown;
+        }
+        
     </style>
+    <script>
+        $(Document).ready(function(){
+            $("a img").click(ejecuta);
+            $("img").mouseover(ejecuta2);
+            $("img").mouseout(ejecuta3);
+
+        });
+
+        function ejecuta(){
+            alert("hola");
+        }
+
+        function ejecuta2(){
+            var texto="<p class='text'> haz pasado el raton por encima </p>";
+            $(".galleria").append(texto);
+            
+        }
+
+        function ejecuta3(){
+            $(".galleria ").remove("p");
+        }
+    </script>
 </head>
 <body>
-    <div>
-        <div class="imagenes" id="imagenes">
-            <img src="imagenes/1.jpg" alt="error" data-fancybox="gallery">
-            <img src="imagenes/2.jpg" alt="error" data-fancybox="gallery">
-            <img src="imagenes/3.jpg" alt="error" data-fancybox="gallery">
-            <img src="imagenes/4.jpg" alt="error" data-fancybox="gallery">
-        </div>
+    
+        
+            
+            <div class="galleria">
+               <a href=""><img src="imagenes/1.jpg" alt="error" ></a> 
+            </div>
+            <div class="galleria">
+                <a href=""><img src="imagenes/2.jpg" alt="error" ></a> 
+            </div>
+            <div class="galleria">
+                <a href=""><img src="imagenes/3.jpg" alt="error" ></a> 
+            </div>
+            <div class="galleria">
+                <a href=""><img src="imagenes/4.jpg" alt="error" ></a> 
+            </div>
+            
+            
+        
 
-    </div>
+    
 </body>
 </html>
