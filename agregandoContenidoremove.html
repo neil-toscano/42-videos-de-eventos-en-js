@@ -25,16 +25,28 @@
             top: 100px;
             background-color: pink;
         }
+        #seccion2{
+            width: 300px;
+            position: absolute;
+            right: 100px;
+            top: 100px;
+            background-color: aqua;
+        }
     </style>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
-            $("a").click(ejecuta);
-           
+            $("#seccion a").click(ejecuta);
+            var b=document.getElementById("seccion2");
+           b.addEventListener("click",ejecuta2,false);
         });
         function ejecuta(){
             $("#seccion").remove();
             return false;
+        }
+
+        function ejecuta2(){
+            $("#seccion2").remove();
         }
     </script>
 </head>
@@ -60,6 +72,13 @@
             <a href="#"><p>cerrar</p></a>
          </div>
         
+
+         <div id="seccion2">
+            <p>
+                Esta es una galeria que nos permite modificar el pocisionamiento de los objetos
+            </p>
+            <a href="#"><p>cerrar2</p></a>
+         </div>
      
     </body>
 </html>
