@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        img{
+            height: 300px;
+            width: 300px;
+        }
+        #bannerr{
+            height: 100px;
+            width: 100px;
+            background-color: pink;
+            position: absolute;
+            left: 300px;
+            top: 2000px;
+        }
+        #seccion{
+            width: 300px;
+            position: absolute;
+            left: 100px;
+            top: 100px;
+            background-color: pink;
+        }
+    </style>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $("a").click(ejecuta);
+           
+        });
+        function ejecuta(){
+            $("#seccion").remove();
+            return false;
+        }
+    </script>
+</head>
+
+    <body>
+         
+        <div class="galleria">
+            <a href=""><img src="imagenes/1.jpg" alt="error" ></a> 
+         </div>
+         <div class="galleria">
+             <a href=""><img src="imagenes/2.jpg" alt="error" ></a> 
+         </div>
+         <div class="galleria">
+             <a href=""><img src="imagenes/3.jpg" alt="error" ></a> 
+         </div>
+         <div class="galleria">
+             <a href=""><img src="imagenes/4.jpg" alt="error" ></a> 
+         </div>
+         <div id="seccion">
+            <p>
+                Esta es una galeria que nos permite modificar el pocisionamiento de los objetos
+            </p>
+            <a href="#"><p>cerrar</p></a>
+         </div>
+        
+     
+    </body>
+</html>
