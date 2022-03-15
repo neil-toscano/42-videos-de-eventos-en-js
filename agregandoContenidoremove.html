@@ -5,80 +5,87 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <style>
         img{
             height: 300px;
             width: 300px;
         }
-        #bannerr{
-            height: 100px;
-            width: 100px;
+       
+       
+        
+        div{
             background-color: pink;
-            position: absolute;
-            left: 300px;
-            top: 2000px;
+            margin: 100px;
+            width: 350px;
+
+            float: left;
         }
-        #seccion{
-            width: 300px;
-            position: absolute;
-            left: 100px;
-            top: 100px;
-            background-color: pink;
-        }
-        #seccion2{
-            width: 300px;
-            position: absolute;
-            right: 100px;
-            top: 100px;
-            background-color: aqua;
-        }
+        
+        
     </style>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    
     <script>
         $(document).ready(function(){
-            $("#seccion a").click(ejecuta);
-            var b=document.getElementById("seccion2");
-           b.addEventListener("click",ejecuta2,false);
-        });
-        function ejecuta(){
-            $("#seccion").remove();
-            return false;
-        }
+            //var a=document.getElementById("imagen");
+            //a.addEventListener("click",ejecuta,false);
+            var imagenes=document.querySelectorAll("div img");
+            for( var a=0;a<imagenes.length;a++){
+                imagenes[a].addEventListener("click", ejecuta,false);
+            }
+            //alert(imagenes.length);
+            
+        
+            
 
-        function ejecuta2(){
-            $("#seccion2").remove();
+        });
+        function ejecuta(e){
+            if(e.target.id=="imagen1"){
+            $("#imagen1").replaceWith("<h2>Se agrego al carro</h2>");
+            alert(e.target.id);
+
+            }
+            if(e.target.id=="imagen2"){
+                $("#imagen2").replaceWith("<h2>Se agrego al carro</h2>");
+                alert(e.target.id);
+            }
+            if(e.target.id=="imagen3"){
+                $("#imagen3").replaceWith("<h2> se agrego al carrito </p>");
+                    alert(e.target.id);
+            }
+            if(e.target.id=="imagen4"){
+                $("#imagen4").replaceWith("<h2> se agrego al carrito </p>");
+                    alert(e.target.id);
+            }
+            
+            
         }
     </script>
 </head>
 
     <body>
          
-        <div class="galleria">
-            <a href=""><img src="imagenes/1.jpg" alt="error" ></a> 
-         </div>
-         <div class="galleria">
-             <a href=""><img src="imagenes/2.jpg" alt="error" ></a> 
-         </div>
-         <div class="galleria">
-             <a href=""><img src="imagenes/3.jpg" alt="error" ></a> 
-         </div>
-         <div class="galleria">
-             <a href=""><img src="imagenes/4.jpg" alt="error" ></a> 
-         </div>
-         <div id="seccion">
-            <p>
-                Esta es una galeria que nos permite modificar el pocisionamiento de los objetos
-            </p>
-            <a href="#"><p>cerrar</p></a>
-         </div>
+        
+            <div class="galleria1" id="galleria1">
+                <a href="#"><img src="imagenes/1.jpg" alt="error" id="imagen1"></a> 
+             </div>
+             <div class="galleria2" id="galleria2">
+                 <a href="#"><img src="imagenes/2.jpg" alt="error" id="imagen2"></a> 
+             </div>
+             <div class="galleria3" id="galleria3">
+                 <a href="#"><img src="imagenes/3.jpg" alt="error" id="imagen3" ></a> 
+             </div>
+             <div class="galleria4" id="galleria4">
+                 <a href="#"><img src="imagenes/4.jpg" alt="error" id="imagen4"></a> 
+             </div>
+
+        
+         
+       
+         
         
 
-         <div id="seccion2">
-            <p>
-                Esta es una galeria que nos permite modificar el pocisionamiento de los objetos
-            </p>
-            <a href="#"><p>cerrar2</p></a>
-         </div>
+         
      
     </body>
 </html>
